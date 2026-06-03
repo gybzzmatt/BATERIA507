@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Batería a domicilio en Panamá — instalación en 30 minutos, 24/7. Servicio certificado ISO 16949. Llámanos ahora.">
+<meta property="og:title" content="Baterías 507 — Batería en tu puerta en 30 minutos">
+<meta property="og:description" content="Instalación gratis. Pago al recibir. Sin esperas. 24/7.">
+<title>Baterías 507 — Batería en tu puerta. En 30 minutos. 24/7.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --dark: #0C0F14;
+    --dark2: #131720;
+    --dark3: #1A1F2B;
+    --card: #161B26;
+    --orange: #FF6B1A;
+    --orange-dim: rgba(255,107,26,0.15);
+    --cyan: #00C8E8;
+    --cyan-dim: rgba(0,200,232,0.12);
+    --gold: #C9961E;
+    --cream: #F5EDD8;
+    --green: #0FBA7A;
+    --text: #EAE6DF;
+    --muted: #8A919F;
+    --border: rgba(255,255,255,0.07);
+    --border-bright: rgba(255,255,255,0.14);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Barlow', sans-serif;
+    background: var(--dark);
+    color: var(--text);
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+
+  /* ======== TYPOGRAPHY ======== */
+  .display {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    line-height: 0.92;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+  }
+  .mono { font-family: 'DM Mono', monospace; }
+
+  /* ======== NOISE TEXTURE OVERLAY ======== */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    opacity: 0.025;
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  /* ======== NAV ======== */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 0 5%;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(12,15,20,0.85);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    transition: height 0.3s, background 0.3s;
+  }
+  nav.scrolled {
+    height: 56px;
+    background: rgba(12,15,20,0.96);
+  }
+  .nav-logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: 0.05em;
+    color: var(--text);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--orange); }
+  .nav-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.78rem;
+    color: var(--green);
+    font-weight: 500;
+  }
+  .nav-badge::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--green);
+    animation: blink 1.8s infinite;
+  }
+  @keyframes blink {
+    0%,100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+  .nav-cta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--orange);
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    border-radius: 4px;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .nav-cta:hover { background: #ff8340; transform: scale(1.03); }
+
+  /* ======== HERO ======== */
+  #hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 120px 5% 80px;
+    position: relative;
+    overflow: hidden;
+    gap: 60px;
+  }
+
+  .hero-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,107,26,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,107,26,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: grid-drift 20s linear infinite;
+  }
+  @keyframes grid-drift {
+    from { background-position: 0 0; }
+    to { background-position: 60px 60px; }
+  }
+
+  .hero-glow {
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,107,26,0.12) 0%, transparent 65%);
+    top: -200px;
+    right: -100px;
+    pointer-events: none;
+    animation: glow-pulse 6s ease-in-out infinite;
+  }
+  @keyframes glow-pulse {
+    0%,100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.08); opacity: 0.7; }
+  }
+
+  .hero-content { position: relative; z-index: 2; }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 28px;
+    opacity: 0;
+    animation: fade-up 0.6s 0.2s forwards;
+  }
+  .hero-eyebrow::before, .hero-eyebrow::after {
+    content: '';
+    height: 1px;
+    width: 24px;
+    background: var(--orange);
+    opacity: 0.5;
+  }
+
+  .hero-title {
+    font-size: clamp(3.2rem, 6vw, 6.5rem);
+    color: var(--text);
+    margin-bottom: 28px;
+    opacity: 0;
+    animation: fade-up 0.7s 0.35s forwards;
+  }
+  .hero-title .accent { color: var(--orange); }
+  .hero-title .accent2 { color: var(--cyan); }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    margin-bottom: 40px;
+    font-weight: 400;
+    line-height: 1.7;
+    max-width: 440px;
+    opacity: 0;
+    animation: fade-up 0.7s 0.5s forwards;
+  }
+  .hero-sub strong { color: var(--text); font-weight: 600; }
+
+  .hero-ctas {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+    opacity: 0;
+    animation: fade-up 0.7s 0.65s forwards;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--orange);
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 16px 32px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s;
+    animation: cta-pulse 2.5s ease-in-out infinite;
+  }
+  @keyframes cta-pulse {
+    0%,100% { box-shadow: 0 0 0 0 rgba(255,107,26,0.5); }
+    50% { box-shadow: 0 0 0 14px rgba(255,107,26,0); }
+  }
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .btn-primary:hover { transform: translateY(-2px); animation: none; box-shadow: 0 8px 30px rgba(255,107,26,0.4); }
+  .btn-primary:hover::before { opacity: 1; }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: var(--cyan);
+    text-decoration: none;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 15px 28px;
+    border-radius: 4px;
+    border: 1px solid rgba(0,200,232,0.4);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .btn-secondary:hover { background: var(--cyan-dim); border-color: var(--cyan); transform: translateY(-2px); }
+
+  .hero-trust {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fade-up 0.7s 0.8s forwards;
+  }
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+  .trust-item .icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--dark3);
+    border: 1px solid var(--border-bright);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+  }
+  .trust-item strong { color: var(--text); font-weight: 600; display: block; font-size: 0.88rem; }
+
+  /* ======== BATTERY ANIMATION ======== */
+  .hero-visual {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    animation: fade-in 1s 0.4s forwards;
+  }
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .battery-wrap {
+    position: relative;
+    width: 320px;
+    height: 320px;
+  }
+  .battery-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+  }
+
+  /* ======== ANIMATIONS ======== */
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fade-left {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* ======== SECTION STYLES ======== */
+  section { padding: 100px 5%; }
+  .section-eyebrow {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-eyebrow::after {
+    content: '';
+    height: 1px;
+    width: 40px;
+    background: var(--orange);
+    opacity: 0.4;
+  }
+  .section-title {
+    font-size: clamp(2.2rem, 4vw, 3.6rem);
+    line-height: 0.95;
+    margin-bottom: 20px;
+  }
+  .section-sub {
+    color: var(--muted);
+    font-size: 1rem;
+    max-width: 500px;
+    line-height: 1.7;
+  }
+  .section-header { margin-bottom: 64px; }
+
+  /* ======== PROBLEM SECTION ======== */
+  #problems {
+    background: var(--dark2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .problems-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .problem-card {
+    background: var(--card);
+    padding: 44px 36px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+  }
+  .problem-card:hover { background: var(--dark3); }
+  .problem-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .problem-card.red::before { background: #FF4040; }
+  .problem-card.cyan::before { background: var(--cyan); }
+  .problem-card.orange::before { background: var(--orange); }
+  .problem-card:hover::before { opacity: 1; }
+
+  .problem-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+  }
+  .problem-icon.red { background: rgba(255,64,64,0.12); }
+  .problem-icon.cyan { background: var(--cyan-dim); }
+  .problem-icon.orange { background: var(--orange-dim); }
+  .problem-card h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 12px;
+    line-height: 1.1;
+  }
+  .problem-card p {
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+  .problem-card .solution {
+    margin-top: 20px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .problem-card.red .solution { color: #FF6060; }
+  .problem-card.cyan .solution { color: var(--cyan); }
+  .problem-card.orange .solution { color: var(--orange); }
+
+  /* ======== HOW IT WORKS ======== */
+  #how {
+    position: relative;
+  }
+  .how-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    position: relative;
+  }
+  .how-steps::before {
+    content: '';
+    position: absolute;
+    top: 52px;
+    left: 16.66%;
+    right: 16.66%;
+    height: 1px;
+    background: linear-gradient(90deg, var(--cyan), var(--orange), var(--green));
+    opacity: 0.3;
+  }
+  .how-step {
+    padding: 0 32px;
+    text-align: center;
+    position: relative;
+  }
+  .step-num {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 1px solid var(--border-bright);
+    background: var(--dark2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 28px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.85rem;
+    position: relative;
+    z-index: 2;
+  }
+  .step-num.cyan { border-color: var(--cyan); color: var(--cyan); }
+  .step-num.orange { border-color: var(--orange); color: var(--orange); }
+  .step-num.green { border-color: var(--green); color: var(--green); }
+  .how-step h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+  }
+  .how-step p { color: var(--muted); font-size: 0.9rem; line-height: 1.7; }
+  .step-icon { font-size: 2rem; margin-bottom: 20px; display: block; }
+
+  /* ======== WHY US (STATS) ======== */
+  #why {
+    background: var(--dark2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .why-card {
+    background: var(--card);
+    padding: 40px 28px;
+    transition: background 0.3s;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+  }
+  .why-card:hover { background: #1E2330; }
+  .why-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 0%, rgba(255,107,26,0.06), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .why-card:hover::after { opacity: 1; }
+  .why-number {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 3.6rem;
+    line-height: 1;
+    color: var(--orange);
+    display: block;
+    margin-bottom: 8px;
+  }
+  .why-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 10px;
+    color: var(--text);
+  }
+  .why-desc { font-size: 0.83rem; color: var(--muted); line-height: 1.6; }
+  .why-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(15,186,122,0.12);
+    color: var(--green);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 3px;
+    margin-top: 12px;
+  }
+
+  /* ======== SERVICES ======== */
+  #services { background: var(--dark); }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .service-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 40px 32px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    cursor: default;
+  }
+  .service-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--border-bright);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+  .service-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+  .service-card.s1::before { background: radial-gradient(circle at 80% 20%, rgba(255,107,26,0.08), transparent 60%); }
+  .service-card.s2::before { background: radial-gradient(circle at 80% 20%, rgba(201,150,30,0.08), transparent 60%); }
+  .service-card.s3::before { background: radial-gradient(circle at 80% 20%, rgba(0,200,232,0.08), transparent 60%); }
+  .service-card:hover::before { opacity: 1; }
+  .service-icon {
+    font-size: 2.2rem;
+    margin-bottom: 24px;
+    display: block;
+    line-height: 1;
+  }
+  .service-card h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 12px;
+    line-height: 1.05;
+  }
+  .service-card p { color: var(--muted); font-size: 0.88rem; line-height: 1.7; margin-bottom: 24px; }
+  .service-cta {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: gap 0.2s;
+  }
+  .s1 .service-cta { color: var(--orange); }
+  .s2 .service-cta { color: var(--gold); }
+  .s3 .service-cta { color: var(--cyan); }
+  .service-card:hover .service-cta { gap: 14px; }
+  .service-tag {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 3px;
+  }
+  .tag-hot { background: var(--orange-dim); color: var(--orange); }
+  .tag-pro { background: rgba(201,150,30,0.12); color: var(--gold); }
+  .tag-new { background: var(--cyan-dim); color: var(--cyan); }
+
+  /* ======== TESTIMONIALS ======== */
+  #testimonials {
+    background: var(--dark2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .testimonials-track { position: relative; overflow: hidden; }
+  .testimonials-inner {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .testimonial-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 36px;
+    min-width: 340px;
+    flex-shrink: 0;
+    transition: border-color 0.3s;
+  }
+  .testimonial-card.active { border-color: rgba(255,107,26,0.3); }
+  .stars { color: var(--gold); font-size: 1.1rem; margin-bottom: 20px; letter-spacing: 3px; }
+  .testimonial-quote {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: var(--text);
+    margin-bottom: 24px;
+    font-style: italic;
+  }
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .author-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--dark3);
+    border: 1px solid var(--border-bright);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--orange);
+  }
+  .author-name { font-weight: 600; font-size: 0.88rem; }
+  .author-meta { font-size: 0.78rem; color: var(--muted); }
+  .verified-badge {
+    margin-left: auto;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--green);
+    background: rgba(15,186,122,0.1);
+    padding: 3px 8px;
+    border-radius: 3px;
+  }
+  .testimonials-controls {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 40px;
+  }
+  .testi-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--dark3);
+    border: 1px solid var(--border-bright);
+    color: var(--text);
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+  }
+  .testi-btn:hover { background: var(--orange); border-color: var(--orange); }
+  .testi-dots { display: flex; gap: 6px; }
+  .testi-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    background: var(--border-bright);
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .testi-dot.active { width: 24px; background: var(--orange); }
+
+  /* ======== FINAL CTA ======== */
+  #final-cta {
+    position: relative;
+    text-align: center;
+    padding: 120px 5%;
+    overflow: hidden;
+  }
+  .cta-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 70% at 50% 50%, rgba(255,107,26,0.12) 0%, transparent 70%),
+      var(--dark);
+  }
+  .cta-lines {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,107,26,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,107,26,0.06) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+  #final-cta .section-eyebrow { justify-content: center; }
+  #final-cta .section-eyebrow::before {
+    content: '';
+    height: 1px;
+    width: 40px;
+    background: var(--orange);
+    opacity: 0.4;
+  }
+  #final-cta .section-eyebrow::after { order: -1; }
+  .cta-title {
+    font-size: clamp(2.6rem, 5vw, 5rem);
+    line-height: 0.95;
+    margin-bottom: 24px;
+    color: var(--text);
+    position: relative;
+    z-index: 1;
+  }
+  .cta-sub {
+    font-size: 1rem;
+    color: var(--muted);
+    margin-bottom: 48px;
+    position: relative;
+    z-index: 1;
+  }
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+  }
+  .cta-urgency {
+    margin-top: 24px;
+    font-size: 0.78rem;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    position: relative;
+    z-index: 1;
+  }
+  .cta-urgency span { color: var(--green); font-weight: 600; }
+
+  /* ======== STICKY BOTTOM BAR (MOBILE) ======== */
+  .sticky-bar {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
+    background: var(--dark2);
+    border-top: 1px solid var(--border-bright);
+    padding: 12px 16px;
+    gap: 10px;
+  }
+
+  /* ======== FOOTER ======== */
+  footer {
+    background: var(--dark2);
+    border-top: 1px solid var(--border);
+    padding: 60px 5% 40px;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 60px;
+  }
+  .footer-brand p {
+    color: var(--muted);
+    font-size: 0.88rem;
+    line-height: 1.7;
+    margin-top: 16px;
+    max-width: 280px;
+  }
+  .footer-social { display: flex; gap: 12px; margin-top: 20px; }
+  .social-link {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--dark3);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+  }
+  .social-link:hover { background: var(--orange); border-color: var(--orange); color: #fff; }
+  .footer-col h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 18px;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 10px; }
+  .footer-col ul li a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.88rem;
+    transition: color 0.2s;
+  }
+  .footer-col ul li a:hover { color: var(--orange); }
+  .footer-bottom {
+    border-top: 1px solid var(--border);
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.78rem;
+    color: var(--muted);
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .footer-bottom a { color: var(--muted); text-decoration: none; }
+  .footer-bottom a:hover { color: var(--orange); }
+
+  /* ======== DIVIDER ======== */
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-bright), transparent);
+    margin: 0 5%;
+  }
+
+  /* ======== COUNTER ======== */
+  .count-num { display: inline-block; }
+
+  /* ======== RESPONSIVE ======== */
+  @media (max-width: 900px) {
+    #hero { grid-template-columns: 1fr; padding: 100px 5% 60px; gap: 40px; }
+    .hero-visual { order: -1; }
+    .battery-wrap { width: 220px; height: 220px; }
+    .problems-grid { grid-template-columns: 1fr; gap: 2px; }
+    .how-steps { grid-template-columns: 1fr; gap: 40px; }
+    .how-steps::before { display: none; }
+    .why-grid { grid-template-columns: repeat(2, 1fr); }
+    .services-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .sticky-bar { display: flex; }
+    footer { padding-bottom: 90px; }
+  }
+  @media (max-width: 540px) {
+    .why-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .hero-trust { gap: 16px; }
+  }
+
+  /* Battery charge animation */
+  @keyframes charge {
+    0% { height: 0%; y: 140px; }
+    100% { height: 90%; y: 14px; }
+  }
+  @keyframes bolt-flash {
+    0%, 90%, 100% { opacity: 1; }
+    45%, 55% { opacity: 0.2; }
+  }
+  @keyframes ring-expand {
+    0% { r: 80; opacity: 0.6; stroke-width: 1.5; }
+    100% { r: 140; opacity: 0; stroke-width: 0.5; }
+  }
+  .charge-fill {
+    animation: charge 2.5s cubic-bezier(0.4, 0, 0.2, 1) 0.8s both;
+  }
+  .bolt { animation: bolt-flash 2s ease-in-out 3.5s infinite; }
+  .ring1 { animation: ring-expand 2.5s ease-out 1s infinite; }
+  .ring2 { animation: ring-expand 2.5s ease-out 1.7s infinite; }
+  .ring3 { animation: ring-expand 2.5s ease-out 2.4s infinite; }
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav id="nav">
+  <a href="#" class="nav-logo">BATERÍAS<span>507</span></a>
+  <div class="nav-badge">Disponible ahora · 24/7</div>
+  <a href="tel:+50769999999" class="nav-cta">📞 Llamar</a>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section id="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">Servicio Premium · Panamá</div>
+    <h1 class="display hero-title">
+      Batería<br>
+      en tu puerta.<br>
+      <span class="accent">En 30 min.</span><br>
+      <span class="accent2">24/7.</span>
+    </h1>
+    <p class="hero-sub">
+      <strong>Instalación gratis.</strong> Pago al recibir. Sin esperas. Sin sorpresas.<br>
+      El mejor servicio de baterías a domicilio de Panamá.
+    </p>
+    <div class="hero-ctas">
+      <a href="tel:+50769999999" class="btn-primary">📞 Llamar ahora</a>
+      <a href="https://wa.me/50769999999" class="btn-secondary">💬 WhatsApp</a>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-item">
+        <div class="icon">🏆</div>
+        <div><strong>ISO 16949</strong>Certificado</div>
+      </div>
+      <div class="trust-item">
+        <div class="icon">⭐</div>
+        <div><strong>4.9 / 5</strong>Calificación</div>
+      </div>
+      <div class="trust-item">
+        <div class="icon">👥</div>
+        <div><strong>5,000+</strong>Clientes</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="battery-wrap">
+      <svg class="battery-svg" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Pulse rings -->
+        <circle class="ring1" cx="160" cy="160" r="80" fill="none" stroke="#FF6B1A" stroke-width="1.5"/>
+        <circle class="ring2" cx="160" cy="160" r="80" fill="none" stroke="#00C8E8" stroke-width="1.5"/>
+        <circle class="ring3" cx="160" cy="160" r="80" fill="none" stroke="#FF6B1A" stroke-width="1.5"/>
+
+        <!-- Battery body -->
+        <rect x="90" y="70" width="140" height="180" rx="12" fill="#161B26" stroke="#2A3040" stroke-width="1.5"/>
+
+        <!-- Battery terminal -->
+        <rect x="130" y="56" width="60" height="20" rx="6" fill="#1E2530" stroke="#2A3040" stroke-width="1.5"/>
+
+        <!-- Battery fill bg -->
+        <rect x="100" y="80" width="120" height="160" rx="6" fill="#0C0F14"/>
+
+        <!-- Battery charge fill (animated) -->
+        <rect class="charge-fill" x="100" y="14" width="120" rx="6" fill="url(#chargeGrad)" height="160"/>
+
+        <!-- Charge segments (decorative lines) -->
+        <line x1="100" y1="106" x2="220" y2="106" stroke="#0C0F14" stroke-width="2" opacity="0.6"/>
+        <line x1="100" y1="132" x2="220" y2="132" stroke="#0C0F14" stroke-width="2" opacity="0.6"/>
+        <line x1="100" y1="158" x2="220" y2="158" stroke="#0C0F14" stroke-width="2" opacity="0.6"/>
+        <line x1="100" y1="184" x2="220" y2="184" stroke="#0C0F14" stroke-width="2" opacity="0.6"/>
+        <line x1="100" y1="210" x2="220" y2="210" stroke="#0C0F14" stroke-width="2" opacity="0.6"/>
+
+        <!-- Battery outer frame -->
+        <rect x="90" y="70" width="140" height="180" rx="12" fill="none" stroke="#FF6B1A" stroke-width="1" opacity="0.6"/>
+
+        <!-- Lightning bolt -->
+        <path class="bolt" d="M170 108 L148 165 L163 165 L150 212 L182 150 L166 150 L180 108 Z" fill="#FF6B1A"/>
+
+        <!-- Corner accents -->
+        <path d="M90 90 L90 70 L110 70" stroke="#FF6B1A" stroke-width="2" fill="none" opacity="0.6"/>
+        <path d="M230 90 L230 70 L210 70" stroke="#FF6B1A" stroke-width="2" fill="none" opacity="0.6"/>
+        <path d="M90 230 L90 250 L110 250" stroke="#00C8E8" stroke-width="2" fill="none" opacity="0.6"/>
+        <path d="M230 230 L230 250 L210 250" stroke="#00C8E8" stroke-width="2" fill="none" opacity="0.6"/>
+
+        <!-- Percent label -->
+        <text x="160" y="295" text-anchor="middle" font-family="'DM Mono', monospace" font-size="13" fill="#8A919F" letter-spacing="2">CARGANDO...</text>
+
+        <defs>
+          <linearGradient id="chargeGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#FF8C40"/>
+            <stop offset="100%" stop-color="#FF6B1A"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROBLEMS ===== -->
+<section id="problems">
+  <div class="section-header reveal">
+    <div class="section-eyebrow">El problema</div>
+    <h2 class="display section-title">¿Te suena familiar?</h2>
+    <p class="section-sub">Tres situaciones que le pasan a cualquiera. Una solución que llega en 30 minutos.</p>
+  </div>
+  <div class="problems-grid">
+    <div class="problem-card red reveal reveal-delay-1">
+      <div class="problem-icon red">🔋</div>
+      <h3>Coche sin batería.<br>Atrapado.</h3>
+      <p>Te quedaste varado. En el estacionamiento, en la calle, en el trabajo. Sin poder mover el carro.</p>
+      <div class="solution">→ Llegamos donde estés</div>
+    </div>
+    <div class="problem-card cyan reveal reveal-delay-2">
+      <div class="problem-icon cyan">🕐</div>
+      <h3>Mecánico cerrado<br>a las 6pm.</h3>
+      <p>El problema no espera. Los talleres sí. Nosotros estamos disponibles a medianoche, madrugada, fin de semana.</p>
+      <div class="solution">→ 24/7, incluso feriados</div>
+    </div>
+    <div class="problem-card orange reveal reveal-delay-3">
+      <div class="problem-icon orange">💸</div>
+      <h3>Instalación cara<br>en el taller.</h3>
+      <p>Llevar el carro al taller suma grúa, mano de obra extra, tiempos de espera. Nosotros instalamos gratis.</p>
+      <div class="solution">→ Instalación incluida, siempre</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section id="how">
+  <div class="section-header reveal" style="text-align:center;">
+    <div class="section-eyebrow" style="justify-content:center;">El proceso</div>
+    <h2 class="display section-title">Tres pasos.<br>Treinta minutos.</h2>
+  </div>
+  <div class="how-steps">
+    <div class="how-step reveal reveal-delay-1">
+      <div class="step-num cyan">01</div>
+      <span class="step-icon">📞</span>
+      <h3>Llama o chatea</h3>
+      <p>Llámanos o escríbenos por WhatsApp. Te atendemos en menos de 2 minutos. Sin formularios, sin espera.</p>
+    </div>
+    <div class="how-step reveal reveal-delay-2">
+      <div class="step-num orange">02</div>
+      <span class="step-icon">🚗</span>
+      <h3>Técnico en camino</h3>
+      <p>Nuestro equipo sale de inmediato hacia tu ubicación con la batería correcta para tu modelo de vehículo.</p>
+    </div>
+    <div class="how-step reveal reveal-delay-3">
+      <div class="step-num green">03</div>
+      <span class="step-icon">✅</span>
+      <h3>30 minutos. Listo.</h3>
+      <p>Instalamos, probamos, y te entregamos factura. Pagas al recibir. Garantía incluida en cada batería.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ===== WHY US ===== -->
+<section id="why">
+  <div class="section-header reveal">
+    <div class="section-eyebrow">Por qué nosotros</div>
+    <h2 class="display section-title">Números que<br>hablan solos.</h2>
+  </div>
+  <div class="why-grid">
+    <div class="why-card reveal reveal-delay-1">
+      <span class="why-number"><span class="count-num" data-target="10">0</span>+</span>
+      <div class="why-label">Años de experiencia</div>
+      <p class="why-desc">Expertos en baterías automotrices, solares y eléctricas. Personal certificado y capacitado.</p>
+      <div class="why-badge">✓ Verificado</div>
+    </div>
+    <div class="why-card reveal reveal-delay-2">
+      <span class="why-number"><span class="count-num" data-target="5000">0</span>+</span>
+      <div class="why-label">Clientes satisfechos</div>
+      <p class="why-desc">Más de 5,000 vehículos atendidos en toda Panamá. Confianza probada en la calle.</p>
+      <div class="why-badge">✓ En toda Panamá</div>
+    </div>
+    <div class="why-card reveal reveal-delay-3">
+      <span class="why-number">4.9<span style="font-size:2rem;">★</span></span>
+      <div class="why-label">Calificación promedio</div>
+      <p class="why-desc">Calificación real de clientes verificados. Servicio de excelencia en cada visita.</p>
+      <div class="why-badge">✓ Google Reviews</div>
+    </div>
+    <div class="why-card reveal reveal-delay-4">
+      <span class="why-number">ISO</span>
+      <div class="why-label">16949 Certificado</div>
+      <p class="why-desc">Estándares internacionales de calidad automotriz. Las mejores marcas del mercado.</p>
+      <div class="why-badge">✓ Certificación activa</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section id="services">
+  <div class="section-header reveal">
+    <div class="section-eyebrow">Servicios</div>
+    <h2 class="display section-title">Lo que hacemos<br>mejor que nadie.</h2>
+    <p class="section-sub">Tres líneas de servicio. Un equipo experto. Todo a domicilio en Panamá.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card s1 reveal reveal-delay-1">
+      <span class="service-tag tag-hot">Más popular</span>
+      <span class="service-icon">🔋</span>
+      <h3>Instalación de baterías</h3>
+      <p>Todas las marcas. Todos los modelos. Instalación gratis incluida. Llevamos la batería correcta para tu vehículo con garantía oficial.</p>
+      <a href="tel:+50769999999" class="service-cta">Solicitar instalación →</a>
+    </div>
+    <div class="service-card s2 reveal reveal-delay-2">
+      <span class="service-tag tag-pro">Premium</span>
+      <span class="service-icon">☀️</span>
+      <h3>Sistemas solares</h3>
+      <p>Energía limpia e independiente para tu hogar o negocio. Backup de poder confiable. Instalación profesional certificada.</p>
+      <a href="tel:+50769999999" class="service-cta">Conocer más →</a>
+    </div>
+    <div class="service-card s3 reveal reveal-delay-3">
+      <span class="service-tag tag-new">Nuevo</span>
+      <span class="service-icon">⚡</span>
+      <h3>Cargadores eléctricos</h3>
+      <p>Tu vehículo eléctrico merece lo mejor. Instalación de cargadores domésticos y comerciales. Soporte técnico incluido.</p>
+      <a href="tel:+50769999999" class="service-cta">Ver opciones →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section id="testimonials">
+  <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:48px;" class="reveal">
+    <div>
+      <div class="section-eyebrow">Reseñas</div>
+      <h2 class="display section-title">Lo que dicen<br>nuestros clientes.</h2>
+    </div>
+    <div class="testimonials-controls">
+      <button class="testi-btn" id="prev">←</button>
+      <div class="testi-dots" id="dots"></div>
+      <button class="testi-btn" id="next">→</button>
+    </div>
+  </div>
+  <div class="testimonials-track">
+    <div class="testimonials-inner" id="testimonialsInner">
+      <!-- cards injected by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section id="final-cta">
+  <div class="cta-bg"></div>
+  <div class="cta-lines"></div>
+  <div class="section-eyebrow reveal" style="justify-content:center;">Actúa ahora</div>
+  <h2 class="display cta-title reveal">
+    Tu batería puede<br>
+    fallar <span style="color:var(--orange)">mañana.</span><br>
+    Nosotros estamos<br>
+    aquí <span style="color:var(--cyan)">HOY.</span>
+  </h2>
+  <p class="cta-sub reveal">No esperes quedarte varado. Un mensaje o llamada es todo lo que necesitas.</p>
+  <div class="cta-buttons reveal">
+    <a href="tel:+50769999999" class="btn-primary" style="font-size:1.2rem; padding:18px 40px;">📞 LLAMAR AHORA</a>
+    <a href="https://wa.me/50769999999" class="btn-secondary" style="font-size:1.2rem; padding:17px 36px;">💬 Chat WhatsApp</a>
+  </div>
+  <p class="cta-urgency reveal">Respuesta en <span>&lt; 2 minutos</span> · Técnico en camino en menos de <span>30 minutos</span></p>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="nav-logo" style="font-size:1.6rem;">BATERÍAS<span style="color:var(--orange)">507</span></div>
+      <p>El servicio de baterías a domicilio más confiable de Panamá. Instalación profesional, 24/7, con garantía.</p>
+      <div class="footer-social">
+        <a href="#" class="social-link">📷</a>
+        <a href="#" class="social-link">💬</a>
+        <a href="#" class="social-link">📘</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Servicios</h4>
+      <ul>
+        <li><a href="#">Baterías automotrices</a></li>
+        <li><a href="#">Sistemas solares</a></li>
+        <li><a href="#">Cargadores eléctricos</a></li>
+        <li><a href="#">Mantenimiento</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Empresa</h4>
+      <ul>
+        <li><a href="#">Sobre nosotros</a></li>
+        <li><a href="#">Certificaciones</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Trabaja con nosotros</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <ul>
+        <li><a href="tel:+50769999999">📞 +507 6999-9999</a></li>
+        <li><a href="https://wa.me/50769999999">💬 WhatsApp</a></li>
+        <li><a href="#">📍 Ciudad de Panamá</a></li>
+        <li><a href="#">✉️ info@baterias507.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Baterías 507. Todos los derechos reservados.</span>
+    <div style="display:flex; gap:20px;">
+      <a href="#">Términos de uso</a>
+      <a href="#">Privacidad</a>
+    </div>
+  </div>
+</footer>
+
+<!-- MOBILE STICKY BAR -->
+<div class="sticky-bar">
+  <a href="tel:+50769999999" class="btn-primary" style="flex:1; justify-content:center;">📞 Llamar</a>
+  <a href="https://wa.me/50769999999" class="btn-secondary" style="flex:1; justify-content:center;">💬 WhatsApp</a>
+</div>
+
+<script>
+// ---- NAV scroll ----
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// ---- Reveal on scroll ----
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(el => observer.observe(el));
+
+// ---- Counter animation ----
+function animateCounter(el, target, duration = 1800) {
+  let start = null;
+  const step = (ts) => {
+    if (!start) start = ts;
+    const progress = Math.min((ts - start) / duration, 1);
+    const ease = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.floor(ease * target).toLocaleString('es-PA');
+    if (progress < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const target = parseInt(e.target.dataset.target);
+      animateCounter(e.target, target);
+      counterObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('.count-num').forEach(el => counterObserver.observe(el));
+
+// ---- Testimonials ----
+const testimonials = [
+  { name: 'Carlos M.', location: 'Ciudad de Panamá', quote: '"Increíble. Llegaron en 18 minutos. Batería instalada sin problema. Precio justo y el técnico muy profesional. 100% recomendado."', initials: 'CM' },
+  { name: 'Rebeca T.', location: 'Miraflores', quote: '"Me quedé varada a las 11pm y llamé sin esperanza. En 25 minutos ya estaba en camino a casa. Servicio de otra categoría."', initials: 'RT' },
+  { name: 'Jorge A.', location: 'San Francisco', quote: '"Ya es la segunda vez que los llamo. Siempre puntuales, siempre amables. No iría a otro lugar. Muy buena garantía también."', initials: 'JA' },
+  { name: 'María L.', location: 'Costa del Este', quote: '"Pensé que iba a tardar horas. En media hora el técnico ya había terminado. Además me explicó todo el proceso. Excelente."', initials: 'ML' },
+  { name: 'Ricardo P.', location: 'Bella Vista', quote: '"Profesionalismo de primer nivel. La batería que instalaron tiene mucho mejor rendimiento que la anterior. Vale cada centavo."', initials: 'RP' },
+];
+
+const inner = document.getElementById('testimonialsInner');
+const dotsEl = document.getElementById('dots');
+let currentIdx = 0;
+let autoplay;
+
+testimonials.forEach((t, i) => {
+  const card = document.createElement('div');
+  card.className = 'testimonial-card' + (i === 0 ? ' active' : '');
+  card.innerHTML = `
+    <div class="stars">★★★★★</div>
+    <p class="testimonial-quote">${t.quote}</p>
+    <div class="testimonial-author">
+      <div class="author-avatar">${t.initials}</div>
+      <div>
+        <div class="author-name">${t.name}</div>
+        <div class="author-meta">${t.location}</div>
+      </div>
+      <div class="verified-badge">Verificado</div>
+    </div>`;
+  inner.appendChild(card);
+
+  const dot = document.createElement('div');
+  dot.className = 'testi-dot' + (i === 0 ? ' active' : '');
+  dot.onclick = () => goTo(i);
+  dotsEl.appendChild(dot);
+});
+
+const cards = inner.querySelectorAll('.testimonial-card');
+const dots = dotsEl.querySelectorAll('.testi-dot');
+
+function goTo(idx) {
+  cards[currentIdx].classList.remove('active');
+  dots[currentIdx].classList.remove('active');
+  currentIdx = (idx + testimonials.length) % testimonials.length;
+  cards[currentIdx].classList.add('active');
+  dots[currentIdx].classList.add('active');
+  const cardW = cards[0].offsetWidth + 20;
+  inner.style.transform = `translateX(-${currentIdx * cardW}px)`;
+}
+
+document.getElementById('prev').onclick = () => { clearInterval(autoplay); goTo(currentIdx - 1); startAuto(); };
+document.getElementById('next').onclick = () => { clearInterval(autoplay); goTo(currentIdx + 1); startAuto(); };
+
+function startAuto() {
+  autoplay = setInterval(() => goTo(currentIdx + 1), 4500);
+}
+startAuto();
+
+window.addEventListener('resize', () => goTo(currentIdx));
+</script>
+</body>
+</html>
