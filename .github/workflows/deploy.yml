@@ -1,0 +1,59 @@
+name: Deploy Baterías 507 to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Prepare deploy folder
+        run: |
+          cp -r baterias507-static-export deploy
+          touch deploy/.nojekyll
+          # Fix lang
+          find deploy -name "*.html" -exec sed -i 's/lang="en"/lang="es"/g' {} +
+          # Fix canonical URLs
+          find deploy -name "*.html" -exec sed -i 's|https://sight-slide-show.lovable.app/|https://g2n3.org/|g' {} +
+          # Fix phones
+          find deploy -name "*.html" -exec sed -i 's|tel:+5078305729|tel:+50764201550|g' {} +
+          find deploy -name "*.html" -exec sed -i 's|tel:+50761105730|tel:+50764201550|g' {} +
+          find deploy -name "*.html" -exec sed -i 's|830-5729|6420-1550|g' {} +
+          find deploy -name "*.html" -exec sed -i 's|6110-5730|6420-1550|g' {} +
+          find deploy -name "*.html" -exec sed -i 's|wa.me/50761105730|wa.me/50764201550|g' {} +
+          find deploy -name "*.html" -exec sed -i 's|wa.me/5078305729|wa.me/50764201550|g' {} +
+          # Fix email
+          find deploy -name "*.html" -exec sed -i 's|hola@baterias507.com|ventas@baterias507.com|g' {} +
+          # Fix brands in Schema
+          find deploy -name "*.html" -exec sed -i 's|Vassworld, Malachar, Bunker|VASWORLD POWER|g' {} +
+          # Fix robots.txt
+          sed -i 's|sight-slide-show.lovable.app|g2n3.org|g' deploy/robots.txt || true
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: deploy
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
