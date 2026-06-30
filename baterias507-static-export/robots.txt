@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /distribuidores/dashboard
+Disallow: /admin/
+Disallow: /api/
+
+Sitemap: https://sight-slide-show.lovable.app/sitemap.xml

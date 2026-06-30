@@ -1,0 +1,22 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Baterías 507 — Legacy Squarespace → React redirects (REFERENCIA PORTABLE)
+# ─────────────────────────────────────────────────────────────────────────────
+# AVISO: este archivo NO es ejecutado por el host actual (Cloudflare Workers
+# vía TanStack Start). Las 301 reales viven en `src/start.ts` →
+# `legacyRedirectMiddleware`, alimentado por `src/redirects/legacy-map.ts`.
+#
+# Este archivo se mantiene en formato Netlify/Vercel como documentación y
+# como fallback portable si en el futuro se cambia de hosting.
+# Fuente de verdad: src/redirects/legacy-map.ts
+# ─────────────────────────────────────────────────────────────────────────────
+
+/store              /tienda      301
+/store/*            /tienda      301
+/products           /tienda      301
+/products/*         /tienda      301
+/about              /nosotros    301
+/contactenos        /contacto    301
+/servicios-*        /servicios   301
+/blog/*             /blog/:splat 301
+/nosotros           /nosotros    301
+/sucursales         /sucursales  301
